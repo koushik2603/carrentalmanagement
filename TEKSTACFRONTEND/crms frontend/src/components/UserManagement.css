@@ -1,0 +1,42 @@
+/* src/components/UserManagement.css */
+
+.user-management {
+    /* Main container styles are inherited from other dashboard components */
+}
+
+.user-management h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.user-table-container {
+    overflow-x: auto;
+}
+
+.role-badge {
+    background-color: #dbeafe; /* Light blue */
+    color: #1e40af; /* Dark blue */
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px; /* Pill shape */
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.dark .role-badge {
+    background-color: #1e3a8a;
+    color: #eff6ff;
+}
+
+/* Reusing some global styles from other CSS files */
+.error-message {
+    color: #ef4444;
+    background-color: #fee2e2;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.dark .error-message {
+    background-color: #451a24;
+}

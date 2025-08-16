@@ -1,0 +1,63 @@
+/* src/components/AdminUserManagement.css */
+
+.admin-user-management {
+    /* Styles are very similar to the car management component */
+}
+
+.admin-user-management h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.user-table-container {
+    overflow-x: auto;
+}
+
+/* You can reuse the table styles from AdminCarManagement.css if you have a shared CSS file,
+   but for simplicity, we'll repeat them here. */
+.admin-user-management table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-user-management th,
+.admin-user-management td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .admin-user-management th,
+.dark .admin-user-management td {
+    border-bottom-color: #374151;
+}
+
+.admin-user-management thead {
+    background-color: #f9fafb;
+}
+
+.dark .admin-user-management thead {
+    background-color: #374151;
+}
+
+.admin-user-management th {
+    font-size: 0.875rem;
+    color: #6b7280;
+    text-transform: uppercase;
+}
+
+.dark .admin-user-management th {
+    color: #9ca3af;
+}
+
+.admin-user-management .error-message {
+    color: #ef4444;
+    background-color: #fee2e2;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.dark .admin-user-management .error-message {
+    background-color: #451a24;
+}

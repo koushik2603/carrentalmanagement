@@ -1,0 +1,316 @@
+/* src/components/MyBookings.css */
+
+.my-bookings-page {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 70px); /* Adjust based on your navbar height */
+}
+
+.my-bookings-page.dark {
+    background-color: #111827;
+    color: #f9fafb;
+}
+
+.my-bookings-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.my-bookings-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.my-bookings-header p {
+    color: #6b7280;
+}
+
+.dark .my-bookings-header p {
+    color: #9ca3af;
+}
+
+.bookings-list-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.booking-card {
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    transition: all 0.2s ease;
+}
+
+.dark .booking-card {
+    background-color: #1f2937;
+}
+
+.booking-card-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .booking-card-header {
+    background-color: #1f2937;
+    border-bottom-color: #374151;
+}
+
+.booking-card-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.booking-card-body {
+    padding: 1.5rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.booking-card-body p {
+    margin: 0;
+    color: #374151;
+}
+
+.dark .booking-card-body p {
+    color: #d1d5db;
+}
+
+.booking-card-body p strong {
+    color: #111827;
+    font-weight: 600;
+}
+
+.dark .booking-card-body p strong {
+    color: #f9fafb;
+}
+
+.status-confirmed {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.dark .status-confirmed {
+    color: #4ade80;
+}
+
+.loading-message, .error-message {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 2rem;
+}
+
+.error-message {
+    color: #ef4444;
+}
+/* src/components/MyBookings.css */
+.my-bookings-page {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 70px);
+}
+.my-bookings-page.dark {
+    background-color: #111827;
+    color: #f9fafb;
+}
+.my-bookings-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.my-bookings-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.my-bookings-header p {
+    color: #6b7280;
+}
+.dark .my-bookings-header p {
+    color: #9ca3af;
+}
+.bookings-list-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+.booking-card {
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+.dark .booking-card {
+    background-color: #1f2937;
+}
+.booking-card-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+.dark .booking-card-header {
+    background-color: #1f2937;
+    border-bottom-color: #374151;
+}
+.booking-card-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+.booking-card-body {
+    padding: 1.5rem;
+    display: grid;
+    gap: 0.75rem;
+}
+.loading-message, .error-message {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 2rem;
+}
+.error-message {
+    color: #ef4444;
+}
+
+/* src/components/MyBookings.css */
+
+/* ... (keep your existing styles for my-bookings-page, header, etc.) ... */
+
+.bookings-list-container {
+    max-width: 800px; /* Adjusted width for a better card layout */
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* NEW STYLES FOR THE ENHANCED BOOKING CARD */
+.booking-card-rich {
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    display: flex;
+    overflow: hidden; /* Ensures the image corners are rounded */
+    transition: all 0.2s ease;
+}
+.booking-card-rich:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.dark .booking-card-rich {
+    background-color: #1f2937;
+}
+
+.booking-card-image-wrapper {
+    flex-shrink: 0; /* Prevents the image container from shrinking */
+    width: 200px; /* Fixed width for the image */
+}
+
+.booking-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+.dark .image-placeholder {
+    background-color: #374151;
+    color: #9ca3af;
+}
+
+.booking-card-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1;
+}
+
+.booking-vehicle-name {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.booking-card-details p {
+    margin: 0;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+.dark .booking-card-details p {
+    color: #d1d5db;
+}
+
+.booking-card-details p strong {
+    color: #111827;
+    font-weight: 600;
+}
+
+.dark .booking-card-details p strong {
+    color: #f9fafb;
+}
+
+.booking-total-fare {
+    margin-top: auto; /* Pushes the total fare to the bottom */
+    font-size: 1.2rem !important; /* Makes the fare stand out */
+    color: #4f46e5 !important;
+}
+
+.dark .booking-total-fare {
+    color: #a5b4fc !important;
+}
+
+.dark .booking-total-fare strong {
+    color: #a5b4fc !important;
+}
+
+/* Add these styles to the end of src/components/MyBookings.css */
+
+.cancel-booking-btn {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    width: 100%;
+    border: 1px solid #fca5a5;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cancel-booking-btn:hover {
+    background-color: #fecaca;
+    border-color: #f87171;
+}
+
+.dark .cancel-booking-btn {
+    background-color: #451a24;
+    border-color: #7f1d1d;
+    color: #fecaca;
+}
+
+.dark .cancel-booking-btn:hover {
+    background-color: #57202c;
+}
+
+.success-message {
+    text-align: center;
+    color: #16a34a;
+    background-color: #dcfce7;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin: 0 auto 1.5rem auto;
+    max-width: 800px;
+}
+
+.dark .success-message {
+    background-color: #166534;
+    color: #dcfce7;
+}

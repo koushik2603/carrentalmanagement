@@ -1,0 +1,14 @@
+/* src/components/BookingManagement.css */
+
+.booking-management h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.booking-table-container {
+    overflow-x: auto;
+}
+
+/* The global table styles from your other CSS files will apply,
+   so we don't need to add much here. This file is mostly a placeholder
+   for any future specific styles you might want. */
