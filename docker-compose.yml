@@ -5,8 +5,7 @@ services:
   mysql-db:
     image: mysql:8.0
     environment:
-      # Password is set to 'root' as requested
-      MYSQL_ROOT_PASSWORD: "root" 
+      MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: caaar
     networks:
       - car-network
@@ -28,8 +27,8 @@ services:
       - discoveryserver
     environment:
       EUREKA_URI: http://discoveryserver:9014/eureka
-      # Set to '*' for testing without a domain. Change this later!
-      CORS_ALLOWED_ORIGIN: "*" 
+      # Allow requests from any IP for testing
+      CORS_ALLOWED_ORIGIN: "*"
 
   # 3. User Authentication Service
   userauthservice:
@@ -43,7 +42,6 @@ services:
       EUREKA_URI: http://discoveryserver:9014/eureka
       DB_URL: jdbc:mysql://mysql-db:3306/caaar
       DB_USER: root
-      # Password is set to 'root'
       DB_PASSWORD: "root"
 
   # 4. Car Service
@@ -58,34 +56,19 @@ services:
       EUREKA_URI: http://discoveryserver:9014/eureka
       DB_URL: jdbc:mysql://mysql-db:3306/caaar
       DB_USER: root
-      # Password is set to 'root'
       DB_PASSWORD: "root"
-      # You should still change this to a long, random secret
-      JWT_SECRET: "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437" 
+      JWT_SECRET: "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437" # CHANGE THIS
 
-  # 5. Frontend Service (React App)
+  # 5. Frontend Service (React App) - MODIFIED
   frontend:
     build: .
     networks:
       - car-network
     depends_on:
       - apigateway
-
-  # 6. Nginx Reverse Proxy
-  nginx:
-    image: nginx:latest
     ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./certbot/www:/var/www/certbot/:ro
-      - ./certbot/conf/:/etc/nginx/ssl/:ro
-    networks:
-      - car-network
-    depends_on:
-      - frontend
-      - apigateway
+      # Exposes the frontend to the internet on port 80 (HTTP)
+      - "80:3000" # Assumes your React app runs on port 3000 inside the container
 
 networks:
   car-network:
